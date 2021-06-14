@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debug
+spec:
+  selector:
+    matchLabels:
+      app: debug
+  template:
+    metadata:
+      labels:
+        app: debug
+    spec:
+      containers:
+      - name: debug
+        image: docker.io/mcano/kube-debug:v1.0-buggy
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
