@@ -2,7 +2,8 @@ FROM alpine:3.7
 
 RUN apk add --update bash tini
 
-ENV SHELL=/bin/bash
+ARG INSERT_BUG=no
+ENV SHELL=/bin/bash INSERT_BUG=${INSERT_BUG}
 
 COPY . /app
 

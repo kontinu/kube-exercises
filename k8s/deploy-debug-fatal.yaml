@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debug-fatal
+spec:
+  selector:
+    matchLabels:
+      app: debug-fatal
+  template:
+    metadata:
+      labels:
+        app: debug-fatal
+    spec:
+      containers:
+      - name: debug-fatal
+        env: #insert wrong configuration to an app that "works"
+          - name: INSERT_BUG
+            value: FATAL
+        image: docker.io/mcano/kube-debug:v1.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
