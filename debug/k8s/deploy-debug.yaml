@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: debug
-        image: docker.io/mcano/kube-debug:v1.0-buggy
+        image: docker.io/kontinu/kube-debug:v1.0-buggy
         resources:
           limits:
             memory: "128Mi"

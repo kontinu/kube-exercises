@@ -16,7 +16,7 @@ spec:
         env: #insert wrong configuration to an app that "works"
           - name: INSERT_BUG
             value: FATAL
-        image: docker.io/mcano/kube-debug:v1.0
+        image: docker.io/kontinu/kube-debug:v1.0
         resources:
           limits:
             memory: "128Mi"
